@@ -13,10 +13,13 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <!-- Scripts -->
+        <!-- Styles -->
         <style>
             body {
-                background-image: url({{ asset('Frontend/assets/images/360_F_280152178_Syn5plOpbV1ijffvGuUmm8sjDaJofqox.jpg') }});
+                background-image: url("{{ asset('Frontend/assets/images/360_F_280152178_Syn5plOpbV1ijffvGuUmm8sjDaJofqox.jpg') }}");
+                background-repeat: no-repeat;
+                background-size: cover;
+                /* background-color: #333; */
             }
         </style>
     </head>
