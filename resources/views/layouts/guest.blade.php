@@ -12,6 +12,13 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Scripts -->
+        <style>
+            body {
+                background-image: url({{ asset('Frontend/assets/images/360_F_280152178_Syn5plOpbV1ijffvGuUmm8sjDaJofqox.jpg') }});
+            }
+        </style>
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
