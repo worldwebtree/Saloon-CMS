@@ -30,7 +30,7 @@ Route::prefix('customer')->group(function () {
 Route::prefix('admin')->group(function () {
 
     Route::get('/dashboard', function () {
-        return view('Frontend.Admin.index');
+        return view('Frontend.Admin.dashboard');
 
     })->middleware(['auth', 'verified'])->name('admin.dashboard');
 
