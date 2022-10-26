@@ -17,8 +17,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('Frontend.Admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Customer routes
+Route::prefix('customer')->group(function () {
 
+    Route::get('/dashboard', function () {
+        return view('Frontend.Customer.dashboard');
+
+    })->middleware(['auth', 'verified'])->name('customer.dashboard');
+});
+
+// Admin routes
+Route::prefix('admin')->group(function () {
+
+    Route::get('/dashboard', function () {
+        return view('Frontend.Admin.Cork-Admin DASHBOARD.index');
+
+    })->middleware(['auth', 'verified'])->name('admin.dashboard');
+
+    // Route::controller()->group(function () {
+
+    // });
+});
 require __DIR__.'/auth.php';

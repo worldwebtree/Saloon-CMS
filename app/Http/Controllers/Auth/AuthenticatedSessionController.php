@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthenticatedSessionController extends Controller
 {
+
     /**
      * Display the login view.
      *
@@ -32,7 +33,10 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if (Auth::user()->role == "super-admin")
+            return redirect()->route('admin.dashboard');
+
+        return redirect()->route('customer.dashboard');
     }
 
     /**
