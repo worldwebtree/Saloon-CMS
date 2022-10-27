@@ -18,8 +18,12 @@
         <ul class="navbar-item ml-md-auto">
 
             <li class="nav-item user-profile-dropdown">
-                <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <img src="{{ asset('Frontend/assets/dashboard-icons/1x/1x/Asset 32.png') }}" alt="customer-add">
+                <a class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    @if (auth()->user()->gender == "male")
+                        <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="user-male">
+                        @elseif (auth()->user()->gender == "female")
+                        <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="user-female">
+                    @endif
                 </a>
             </li>
 

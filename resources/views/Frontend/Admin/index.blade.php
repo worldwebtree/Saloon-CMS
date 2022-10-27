@@ -79,6 +79,8 @@
             "pageLength": 7
         });
     </script>
+
+    @yield('scripts')
 </body>
 
 <!-- Mirrored from designreset.com/cork/ltr/demo4/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Jul 2021 12:41:44 GMT -->
