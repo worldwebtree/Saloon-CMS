@@ -88,8 +88,10 @@
                                     <div class="ml-5 mb-1">
                                         <input type="file" class="form-control bg-transparent rounded-pill d-none" name="avatar" id="Avatar" placeholder="">
                                         <label for="Avatar">
-                                            <span>wow</span>
-                                            <img src="{{ asset('Frontend/assets/dashboard-icons/1x/1x/1x/1x/Asset 1.png') }}" alt="camera">
+                                            <div class="avatar-content position-relative">
+                                                <input type="text" style="background-color:#D4FAFF;" class="form-control rounded-pill" name="" id="file-empty-field">
+                                                <img style="top: 0px; left: 10rem;" class="position-absolute" src="{{ asset('Frontend/assets/dashboard-icons/1x/1x/1x/1x/Asset 1.png') }}" alt="camera">
+                                            </div>
                                         </label>
                                     </div>
                                 </div>
