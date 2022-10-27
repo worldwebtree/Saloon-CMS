@@ -44,13 +44,57 @@
             <div id="content" class="main-content">
                 <div class="layout-px-spacing">
 
-                    <div class="row layout-top-spacing">
-                        <div class="add-card">
-                            <a name="" id="" class="btn-sm btn-info text-dark float-right" href="#" role="button">
+                    <div class="layout-top-spacing">
+                        <div class="add-card float-right">
+                            <a name="" id="" class="btn text-dark rounded-pill" href="#" role="button">
                                 <img src="{{ asset('Frontend/assets/dashboard-icons/1x/1x/1x/Asset 34.png') }}" alt="customer-add">
-                                Add Card
+                                <span>
+                                    Add Card
+                                </span>
                             </a>
                         </div>
+                    </div>
+
+                    <div class="register-customer-form pt-5">
+                        <form action="" method="post" class="text-uppercase">
+                            <div class="d-flex justify-content-around">
+                                <div class="mb-1">
+                                    <label for="fullName" class="form-label pl-3">Full Name</label>
+                                    <input type="text" class="form-control bg-transparent rounded-pill" name="fullName" id="FullName" placeholder="">
+                                </div>
+
+                                <div class="mb-1">
+                                    <label for="email" class="form-label pl-3">Email</label>
+                                    <input type="email" class="form-control bg-transparent rounded-pill" name="email" id="Email" placeholder="">
+                                </div>
+
+                                <div class="mb-1">
+                                    <label for="contact-no" class="form-label pl-3">Contact no</label>
+                                    <input type="number" class="form-control bg-transparent rounded-pill" name="contact-no" id="ContactNo" placeholder="">
+                                </div>
+                            </div>
+                            <hr class="bg-dark w-100">
+
+                            <div class="gender-section d-flex align-items-center">
+                                <label for="gender" class="form-label">Gender</label>
+                                <div class="ml-5 mb-1">
+                                    <input type="text" class="form-control bg-transparent rounded-pill" name="gender" id="Gender" placeholder="">
+                                </div>
+                                <div class="mb-1 ml-5 mr-5">
+                                    <input type="text" class="form-control bg-transparent rounded-pill" name="gender" id="Gender" placeholder="">
+                                </div>
+
+                                <div class="avatar-section border-left">
+                                    <div class="ml-5 mb-1">
+                                        <input type="file" class="form-control bg-transparent rounded-pill d-none" name="avatar" id="Avatar" placeholder="">
+                                        <label for="Avatar">
+                                            <span>wow</span>
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/1x/1x/1x/1x/Asset 1.png') }}" alt="camera">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
 
                 </div>

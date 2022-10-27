@@ -27,12 +27,12 @@
     <!-- END PAGE LEVEL STYLES -->
     {{-- styles --}}
     <style>
-        .theme-logo > a {
+        /* .theme-logo > a {
             color: #29ABE2;
         }
         .user-profile-dropdown > a {
             color: #29ABE2;
-        }
+        } */
     </style>
     {{-- styles --}}
 
