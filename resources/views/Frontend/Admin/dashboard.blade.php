@@ -78,19 +78,19 @@
                             <div class="gender-section d-flex align-items-center">
                                 <label for="gender" class="form-label">Gender</label>
 
-                                <div class="ml-5 mb-1 border pt-3 pb-3 pl-2 pr-2">
+                                <div style="border:2px solid #dfdfdf;" class="ml-5 mb-1 rounded pt-3 pb-3 pl-2 pr-2">
                                     <input type="checkbox" class="form-control d-none" name="gender" id="Gender" placeholder="">
                                     <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="male-icon" srcset="">
                                     <label for="Gender">male</label>
                                 </div>
 
-                                <div class="mb-1 ml-5 mr-5 border pt-3 pb-3 pl-2 pr-2">
+                                <div style="border:2px solid #dfdfdf;" class="mb-1 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
                                     <input type="checkbox" class="form-control d-none" name="gender" id="Gender" placeholder="">
                                     <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="female-icon" srcset="">
                                     <label for="Gender">female</label>
                                 </div>
 
-                                <div class="avatar-section border-left">
+                                <div style="border-left:2px solid #dfdfdf;" class="avatar-section">
                                     <label for="" class="ml-5 pl-3">
                                         Submit Picture
                                     </label>
@@ -98,7 +98,7 @@
                                         <input type="file" class="form-control bg-transparent rounded-pill d-none" name="avatar" id="Avatar" placeholder="">
 
                                         <label for="Avatar">
-                                            <div class="avatar-content position-relative border rounded pt-4 pb-4 pl-2 pr-2">
+                                            <div style="border:2px solid #dfdfdf;" class="avatar-content position-relative rounded pt-4 pb-4 pl-2 pr-2">
                                                 <div style="background-color:#D4FAFF; width:15rem; height:50px; border-radius: 2rem;" class="border">
                                                     <span style="top: 2.3rem; left: 1rem; width: 10rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" id="file-empty-field" class="position-absolute"></span>
                                                 </div>
@@ -191,12 +191,15 @@
                                 .slider.round:before {
                                 border-radius: 50%;
                                 }
+                                .setBorder {
+                                    border: 2px solid #dfdfdf !important;
+                                }
                             </style>
 
                             <div class="services text-capitalize col-lg-12 row">
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hair cut
@@ -210,7 +213,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 11.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 shampoo
@@ -224,7 +227,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 12.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 blow dryer
@@ -238,7 +241,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 13.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 eye brow
@@ -252,7 +255,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 14.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hair treatement
@@ -266,7 +269,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 15.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hair spa
@@ -280,7 +283,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 16.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 facial
@@ -294,7 +297,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 17.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 menicure pedicure
@@ -308,7 +311,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 18.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hand massage
@@ -322,7 +325,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 19.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 foot massage
@@ -336,7 +339,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 20.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 waxing full body
@@ -350,7 +353,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 21.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hand wexing
@@ -364,7 +367,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 22.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 leg wexing
@@ -378,7 +381,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 23.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 under arms
@@ -392,7 +395,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 24.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 clean up
@@ -406,7 +409,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 25.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 dtan
@@ -420,7 +423,7 @@
                                 </div>
                                 <div class="form-check col-lg-3 mb-3 text-center">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 26.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 face wax brazilian
