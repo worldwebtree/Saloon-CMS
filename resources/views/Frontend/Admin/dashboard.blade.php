@@ -1,5 +1,88 @@
 @extends('Frontend.Admin.index')
 
+    <style>
+        /* The switch - the box around the slider */
+        .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 14px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {display:none;}
+
+        /* The slider */
+        .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        input.default:checked + .slider {
+        background-color: #29ABE2;
+        }
+        input.primary:checked + .slider {
+        background-color: #2196F3;
+        }
+        input.success:checked + .slider {
+        background-color: #8bc34a;
+        }
+        input.info:checked + .slider {
+        background-color: #3de0f5;
+        }
+        input.warning:checked + .slider {
+        background-color: #FFC107;
+        }
+        input.danger:checked + .slider {
+        background-color: #f44336;
+        }
+
+        input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+        border-radius: 34px;
+        }
+
+        .slider.round:before {
+        border-radius: 50%;
+        }
+        .setBorder {
+            border: 2px solid #dfdfdf !important;
+        }
+
+        .gender-animate-border {
+            border: 2px solid #29ABE2 !important;
+        }
+    </style>
+
     @section('content')
         <!-- BEGIN LOADER -->
         <x-dashboard-loading-animation/>
@@ -57,38 +140,40 @@
 
                     <div class="register-customer-form pt-5">
                         <form action="#" method="post" class="text-uppercase">
-                            <div class="d-flex justify-content-around">
-                                <div class="mb-1">
+                            <div class="row justify-content-around col-lg-12">
+                                <div class="mb-3 col-lg-4">
                                     <label for="fullName" class="form-label pl-3">Full Name</label>
-                                    <input type="text" class="form-control bg-transparent rounded-pill" name="fullName" id="FullName" placeholder="">
+                                    <input type="text" class="form-control bg-transparent rounded-pill w-100" name="fullName" id="FullName" placeholder="">
                                 </div>
 
-                                <div class="mb-1">
+                                <div class="mb-3 col-lg-4">
                                     <label for="email" class="form-label pl-3">Email</label>
-                                    <input type="email" class="form-control bg-transparent rounded-pill" name="email" id="Email" placeholder="">
+                                    <input type="email" class="form-control bg-transparent rounded-pill w-100" name="email" id="Email" placeholder="">
                                 </div>
 
-                                <div class="mb-1">
+                                <div class="mb-3 col-lg-4">
                                     <label for="contact-no" class="form-label pl-3">Contact no</label>
-                                    <input type="number" class="form-control bg-transparent rounded-pill" name="contact-no" id="ContactNo" placeholder="">
+                                    <input type="number" class="form-control bg-transparent rounded-pill w-100" name="contact-no" id="ContactNo" placeholder="">
                                 </div>
                             </div>
                             <hr class="bg-dark w-100">
 
-                            <div class="gender-section d-flex align-items-center">
+                            <div class="gender-section row align-items-center">
                                 <label for="gender" class="form-label">Gender</label>
-
-                                <div style="border:2px solid #dfdfdf;" class="ml-5 mb-1 rounded pt-3 pb-3 pl-2 pr-2">
+                                <div style="border:2px solid #dfdfdf;" id="set-border-blue-male" class="ml-5 mb-3 rounded pt-3 pb-3 pl-2 pr-2">
                                     <input type="checkbox" class="form-control d-none" name="gender" id="Gender-male" placeholder="">
-                                    <a class="btn" id="button">check</a>
-                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="male-icon" srcset="">
-                                    <label for="Gender-male">male</label>
+                                    <label for="Gender-male" id="gender-male-label">
+                                        <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="male-icon" srcset="">
+                                        male
+                                    </label>
                                 </div>
 
-                                <div style="border:2px solid #dfdfdf;" class="mb-1 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
+                                <div style="border:2px solid #dfdfdf;" id="set-border-blue-female" class="mb-3 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
                                     <input type="checkbox" class="form-control d-none" name="gender" id="Gender-female" placeholder="">
+                                    <label for="Gender-female" id="gender-female-label">
                                     <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="female-icon" srcset="">
-                                    <label for="Gender-female">female</label>
+                                        female
+                                    </label>
                                 </div>
 
                                 <div style="border-left:2px solid #dfdfdf;" class="avatar-section">
@@ -100,7 +185,7 @@
 
                                         <label for="Avatar">
                                             <div style="border:2px solid #dfdfdf;" class="avatar-content position-relative rounded pt-4 pb-4 pl-2 pr-2">
-                                                <div style="background-color:#D4FAFF; width:15rem; height:50px; border-radius: 2rem;" class="border">
+                                                <div style="background-color:#D4FAFF; border:2px solid #dfdfdf; width:15rem; height:50px; border-radius: 2rem;" class="">
                                                     <span style="top: 2.3rem; left: 1rem; width: 10rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" id="file-empty-field" class="position-absolute"></span>
                                                 </div>
                                                 <img style="top: 1.6rem; left: 12rem;" class="position-absolute" src="{{ asset('Frontend/assets/dashboard-icons/1x/1x/1x/1x/Asset 1.png') }}" alt="camera">
@@ -116,91 +201,13 @@
                     <div class="services-section">
                         <div class="services-content">
                             <h5 class="text-uppercase">
-                                service list
+                                service lists
                             </h5>
-                            <style>
-                                /* The switch - the box around the slider */
-                                .switch {
-                                position: relative;
-                                display: inline-block;
-                                width: 40px;
-                                height: 14px;
-                                }
-
-                                /* Hide default HTML checkbox */
-                                .switch input {display:none;}
-
-                                /* The slider */
-                                .slider {
-                                position: absolute;
-                                cursor: pointer;
-                                top: 0;
-                                left: 0;
-                                right: 0;
-                                bottom: 0;
-                                background-color: #ccc;
-                                -webkit-transition: .4s;
-                                transition: .4s;
-                                }
-
-                                .slider:before {
-                                position: absolute;
-                                content: "";
-                                height: 16px;
-                                width: 16px;
-                                left: 0;
-                                bottom: 0;
-                                background-color: white;
-                                -webkit-transition: .4s;
-                                transition: .4s;
-                                }
-
-                                input.default:checked + .slider {
-                                background-color: #29ABE2;
-                                }
-                                input.primary:checked + .slider {
-                                background-color: #2196F3;
-                                }
-                                input.success:checked + .slider {
-                                background-color: #8bc34a;
-                                }
-                                input.info:checked + .slider {
-                                background-color: #3de0f5;
-                                }
-                                input.warning:checked + .slider {
-                                background-color: #FFC107;
-                                }
-                                input.danger:checked + .slider {
-                                background-color: #f44336;
-                                }
-
-                                input:focus + .slider {
-                                box-shadow: 0 0 1px #2196F3;
-                                }
-
-                                input:checked + .slider:before {
-                                -webkit-transform: translateX(26px);
-                                -ms-transform: translateX(26px);
-                                transform: translateX(26px);
-                                }
-
-                                /* Rounded sliders */
-                                .slider.round {
-                                border-radius: 34px;
-                                }
-
-                                .slider.round:before {
-                                border-radius: 50%;
-                                }
-                                .setBorder {
-                                    border: 2px solid #dfdfdf !important;
-                                }
-                            </style>
 
                             <div class="services text-capitalize col-lg-12 row">
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hair cut
@@ -212,9 +219,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 11.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 shampoo
@@ -226,9 +233,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 12.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 blow dryer
@@ -240,9 +247,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 13.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 eye brow
@@ -254,9 +261,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 14.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hair treatement
@@ -268,9 +275,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 15.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hair spa
@@ -282,9 +289,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 16.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 facial
@@ -296,9 +303,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 17.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 menicure pedicure
@@ -310,9 +317,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 18.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hand massage
@@ -324,9 +331,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 19.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 foot massage
@@ -338,9 +345,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 20.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 waxing full body
@@ -352,9 +359,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 21.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hand wexing
@@ -366,9 +373,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 22.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 leg wexing
@@ -380,9 +387,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 23.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 under arms
@@ -394,9 +401,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 24.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 clean up
@@ -408,9 +415,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 25.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 dtan
@@ -422,9 +429,9 @@
                                         </div>
                                     </li>
                                 </div>
-                                <div class="form-check col-lg-3 mb-3 text-center">
-                                    <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="setBorder border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                <div class="col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 26.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 face wax brazilian
@@ -439,13 +446,49 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="footer-wrapper">
-                    <div class="footer-section f-section-1">
-                        <p class="">Copyright © 2021 <a target="_blank" href="https://designreset.com/">DesignReset</a>, All rights reserved.</p>
+                    <hr class="bg-dark w-100">
+
+                    <div class="card-section col-lg-12">
+                        <div class="card-content pl-5 pr-5 pt-2 pb-2 setBorder rounded">
+                            <h5 class="text-uppercase pl-4">
+                                Enter Card No.*
+                            </h5>
+                            <div class="card-number-inputs-section">
+                                <div class="card-inputs row justify-content-around align-items-center">
+                                    <div class="card-image mb-3">
+                                        <img src="{{ asset('Frontend/assets/dashboard-icons/1x/Asset 1.png') }}" alt="" srcset="">
+                                    </div>
+                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" name="" id="" placeholder="xxxx">
+                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" name="" id="" placeholder="xxxx">
+                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" name="" id="" placeholder="xxxx">
+                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" name="" id="" placeholder="xxxx">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="footer-section f-section-2">
-                        <p class="">Coded with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></p>
+                    <hr class="bg-dark w-100">
+
+                    <div class="other-credentials-section setBorder rounded col-lg-12">
+                        <div class="other-credentials-section-content pt-2 pb-2 row justify-content-around">
+                            <div class="mb-3">
+                                <label for="DateTime">pick date & time*</label>
+                                <input type="datetime-local" class="form-control bg-transparent" name="" id="DateTime" placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Password">password</label>
+                                <input type="password" class="form-control bg-transparent" name="" id="" placeholder="xxxx">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Location">location</label>
+                                <input type="text" class="form-control bg-transparent" name="" id="" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-wrapper mt-3">
+                    <div class="footer-section f-section-1 text-center">
+                        <p class="">Copyright © 2022 <a target="_blank" href="#">WorldWebTree</a>, All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -464,13 +507,12 @@
                 });
 
                 $(document).ready(function () {
-                    $("#button").click(function () {
+                    $("#gender-male-label").click(function () {
+                        $("#set-border-blue-male").toggleClass("gender-animate-border");
+                    });
 
-                        if ($("#Gender-male").is(":checked")) {
-                            alert("Is checked");
-                        } else {
-                            alert("Is not checked");
-                        }
+                    $("#gender-female-label").click(function () {
+                        $("#set-border-blue-female").toggleClass("gender-animate-border");
                     });
 
                 });
