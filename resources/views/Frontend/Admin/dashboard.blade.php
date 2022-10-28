@@ -79,15 +79,16 @@
                                 <label for="gender" class="form-label">Gender</label>
 
                                 <div style="border:2px solid #dfdfdf;" class="ml-5 mb-1 rounded pt-3 pb-3 pl-2 pr-2">
-                                    <input type="checkbox" class="form-control d-none" name="gender" id="Gender" placeholder="">
+                                    <input type="checkbox" class="form-control d-none" name="gender" id="Gender-male" placeholder="">
+                                    <a class="btn" id="button">check</a>
                                     <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="male-icon" srcset="">
-                                    <label for="Gender">male</label>
+                                    <label for="Gender-male">male</label>
                                 </div>
 
                                 <div style="border:2px solid #dfdfdf;" class="mb-1 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
-                                    <input type="checkbox" class="form-control d-none" name="gender" id="Gender" placeholder="">
+                                    <input type="checkbox" class="form-control d-none" name="gender" id="Gender-female" placeholder="">
                                     <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="female-icon" srcset="">
-                                    <label for="Gender">female</label>
+                                    <label for="Gender-female">female</label>
                                 </div>
 
                                 <div style="border-left:2px solid #dfdfdf;" class="avatar-section">
@@ -460,6 +461,18 @@
                         let fileName = e.target.files[0].name;
                         $("#file-empty-field").text(fileName);
                     });
+                });
+
+                $(document).ready(function () {
+                    $("#button").click(function () {
+
+                        if ($("#Gender-male").is(":checked")) {
+                            alert("Is checked");
+                        } else {
+                            alert("Is not checked");
+                        }
+                    });
+
                 });
             </script>
         @endsection
