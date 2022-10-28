@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="register-customer-form pt-5">
-                        <form action="" method="post" class="text-uppercase">
+                        <form action="#" method="post" class="text-uppercase">
                             <div class="d-flex justify-content-around">
                                 <div class="mb-1">
                                     <label for="fullName" class="form-label pl-3">Full Name</label>
@@ -81,13 +81,13 @@
                                 <div class="ml-5 mb-1 border pt-3 pb-3 pl-2 pr-2">
                                     <input type="checkbox" class="form-control d-none" name="gender" id="Gender" placeholder="">
                                     <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="male-icon" srcset="">
-                                    <label for="">male</label>
+                                    <label for="Gender">male</label>
                                 </div>
 
                                 <div class="mb-1 ml-5 mr-5 border pt-3 pb-3 pl-2 pr-2">
                                     <input type="checkbox" class="form-control d-none" name="gender" id="Gender" placeholder="">
                                     <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="female-icon" srcset="">
-                                    <label for="">female</label>
+                                    <label for="Gender">female</label>
                                 </div>
 
                                 <div class="avatar-section border-left">
@@ -118,93 +118,315 @@
                                 service list
                             </h5>
                             <style>
+                                /* The switch - the box around the slider */
+                                .switch {
+                                position: relative;
+                                display: inline-block;
+                                width: 40px;
+                                height: 14px;
+                                }
 
+                                /* Hide default HTML checkbox */
+                                .switch input {display:none;}
 
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 14px;
-}
+                                /* The slider */
+                                .slider {
+                                position: absolute;
+                                cursor: pointer;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background-color: #ccc;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                                }
 
-/* Hide default HTML checkbox */
-.switch input {display:none;}
+                                .slider:before {
+                                position: absolute;
+                                content: "";
+                                height: 16px;
+                                width: 16px;
+                                left: 0;
+                                bottom: 0;
+                                background-color: white;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                                }
 
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+                                input.default:checked + .slider {
+                                background-color: #29ABE2;
+                                }
+                                input.primary:checked + .slider {
+                                background-color: #2196F3;
+                                }
+                                input.success:checked + .slider {
+                                background-color: #8bc34a;
+                                }
+                                input.info:checked + .slider {
+                                background-color: #3de0f5;
+                                }
+                                input.warning:checked + .slider {
+                                background-color: #FFC107;
+                                }
+                                input.danger:checked + .slider {
+                                background-color: #f44336;
+                                }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 0;
-  bottom: 0;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+                                input:focus + .slider {
+                                box-shadow: 0 0 1px #2196F3;
+                                }
 
-input.default:checked + .slider {
-  background-color: #444;
-}
-input.primary:checked + .slider {
-  background-color: #2196F3;
-}
-input.success:checked + .slider {
-  background-color: #8bc34a;
-}
-input.info:checked + .slider {
-  background-color: #3de0f5;
-}
-input.warning:checked + .slider {
-  background-color: #FFC107;
-}
-input.danger:checked + .slider {
-  background-color: #f44336;
-}
+                                input:checked + .slider:before {
+                                -webkit-transform: translateX(26px);
+                                -ms-transform: translateX(26px);
+                                transform: translateX(26px);
+                                }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
+                                /* Rounded sliders */
+                                .slider.round {
+                                border-radius: 34px;
+                                }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
+                                .slider.round:before {
+                                border-radius: 50%;
+                                }
                             </style>
 
-                            <div class="services text-capitalize">
-                                <div class="form-check">
+                            <div class="services text-capitalize col-lg-12 row">
+                                <div class="form-check col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0">
-                                        <div class="border d-flex align-items-center">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
                                                 hair cut
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" class="default">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 11.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                shampoo
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 12.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                blow dryer
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 13.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                eye brow
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 14.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                hair treatement
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 15.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                hair spa
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 16.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                facial
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 17.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                menicure pedicure
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 18.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                hand massage
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 19.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                foot massage
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 20.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                waxing full body
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 21.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                hand wexing
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 22.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                leg wexing
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 23.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                under arms
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 24.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                clean up
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 25.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                dtan
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="form-check col-lg-3 mb-3 text-center">
+                                    <li style="display: inline-block;" class="bg-transparent border-0">
+                                        <div class="border d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 26.png') }}" alt="hair-cut-icon" srcset="">
+                                            <label for="" class="pl-3 pr-2">
+                                                face wax brazilian
+                                            </label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
