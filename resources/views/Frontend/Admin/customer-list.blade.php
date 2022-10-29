@@ -6,7 +6,7 @@
         <!--  END LOADER -->
 
         <!--  BEGIN NAVBAR  -->
-        <x-admin-dashboard-header>
+        <x-admin-dashboard-header page_title="list of card customer's"/>
         <!--  END NAVBAR  -->
 
         <!--  BEGIN NAVBAR  -->
@@ -42,24 +42,24 @@
                     <div class="customer-list-section">
                         <div class="customer-list-content">
                             <div class="table-responsive">
-                                <table class="table table-primary">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Column 1</th>
-                                            <th scope="col">Column 2</th>
-                                            <th scope="col">Column 3</th>
+                                <table class="table table-primary border-0 rounded customer-list-table">
+                                    <thead class="">
+                                        <tr class="">
+                                            <th scope="col">full name</th>
+                                            <th scope="col">card number</th>
+                                            <th scope="col">phone no.</th>
+                                            <th scope="col">actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="">
-                                            <td scope="row">R1C1</td>
-                                            <td>R1C2</td>
-                                            <td>R1C3</td>
-                                        </tr>
-                                        <tr class="">
-                                            <td scope="row">Item</td>
+                                            <td scope="row">lorem</td>
                                             <td>Item</td>
                                             <td>Item</td>
+                                            <td>
+                                                <i class="fas fa-edit"></i> |
+                                                <i class="fas fa-trash"></i>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

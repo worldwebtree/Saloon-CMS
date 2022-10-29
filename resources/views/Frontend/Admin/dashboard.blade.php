@@ -89,7 +89,7 @@
         <!--  END LOADER -->
 
         <!--  BEGIN NAVBAR  -->
-        <x-admin-dashboard-header/>
+        <x-admin-dashboard-header page_title="card page"/>
         <!--  END NAVBAR  -->
 
         <!--  BEGIN NAVBAR  -->
