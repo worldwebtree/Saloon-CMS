@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\CustomerListController;
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,8 +36,14 @@ Route::prefix('admin')->group(function () {
 
     })->middleware(['auth', 'verified'])->name('admin.dashboard');
 
-    // Route::controller()->group(function () {
+    Route::controller(DashboardController::class)->group(function () {
 
-    // });
+        Route::get('/dashboard', 'index')->name('admin.dashboard');
+    });
+
+    Route::controller(CustomerListController::class)->group(function () {
+
+        Route::get('/customers', 'index')->name('admin.customers');
+    });
 });
 require __DIR__.'/auth.php';
