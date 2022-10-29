@@ -6,7 +6,7 @@
         <!--  END LOADER -->
 
         <!--  BEGIN NAVBAR  -->
-        <x-admin-dashboard-header/>
+        <x-admin-dashboard-header>
         <!--  END NAVBAR  -->
 
         <!--  BEGIN NAVBAR  -->
@@ -64,7 +64,6 @@
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
                     </div>
                 </div>
