@@ -41,26 +41,20 @@
                 border-radius: 1rem;
             }
         </style>
-        {{-- <div class="container">
-            <br/>
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-8"> --}}
-                    <form action="#" method="POST" class="card card-sm">
-                        @csrf
-                        <div class="card-body p-0 pl-3 d-flex align-items-center">
-                            <div class="col-auto pl-0">
-                                <i class="fas fa-search h5 m-0"></i>
-                            </div>
-                            <!--end of col-->
-                            <div class="col pl-0">
-                                <input class="form-control form-control-lg p-0 form-control-borderless" type="search" placeholder="Search">
-                            </div>
-                        </div>
-                    </form>
-                {{-- </div>
+
+        <form action="#" method="POST" class="card card-sm">
+            @csrf
+            <div class="card-body p-0 pl-3 d-flex align-items-center">
+                <div class="col-auto pl-0">
+                    <i class="fas fa-search h5 m-0"></i>
+                </div>
                 <!--end of col-->
+                <div class="col pl-0">
+                    <input class="form-control form-control-lg p-0 form-control-borderless" type="search" placeholder="Search">
+                </div>
             </div>
-        </div> --}}
+        </form>
+
 
         <ul class="navbar-item ml-md-auto">
 

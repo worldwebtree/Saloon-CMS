@@ -6,7 +6,7 @@
         <!--  END LOADER -->
 
         <!--  BEGIN NAVBAR  -->
-        <x-admin-dashboard-header page_title="list of card customer's"/>
+        <x-admin-dashboard-header page_title="modification page"/>
         <!--  END NAVBAR  -->
 
         <!--  BEGIN NAVBAR  -->
@@ -31,43 +31,16 @@
                     <div class="layout-top-spacing">
                         <div class="add-card float-right">
                             <a name="" id="" class="btn text-dark rounded-pill" href="#" role="button">
-                                <img src="{{ asset('Frontend/assets/dashboard-icons/1x/Asset-customers.png') }}" alt="customer-add">
                                 <span>
-                                    Customer List
+                                    Update Card
                                 </span>
                             </a>
                         </div>
                     </div>
 
-                    <div class="customer-list-section">
-                        <div class="customer-list-content">
-                            <div class="table-responsive">
-                                <table class="table table-primary border-0 rounded customer-list-table">
-                                    <thead class="">
-                                        <tr class="">
-                                            <th scope="col">full name</th>
-                                            <th scope="col">card number</th>
-                                            <th scope="col">phone no.</th>
-                                            <th scope="col">actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="">
-                                            <td scope="row">lorem</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td>
-                                                <a href="{{ route('admin.modification') }}">
-                                                    <i class="fas fa-edit"></i>
-                                                </a> |
-                                                <a href="#">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                    <div class="personal-information-section">
+                        <div class="personal-info-content border rounded">
+
                         </div>
                     </div>
                 </div>

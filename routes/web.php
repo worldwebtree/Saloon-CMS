@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CustomerListController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ModificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,11 @@ Route::prefix('admin')->group(function () {
     Route::controller(CustomerListController::class)->group(function () {
 
         Route::get('/customers', 'index')->name('admin.customers');
+    });
+
+    Route::controller(ModificationController::class)->group(function () {
+
+        Route::get('/modification', 'index')->name('admin.modification');
     });
 });
 require __DIR__.'/auth.php';
