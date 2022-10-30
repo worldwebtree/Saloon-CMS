@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('saloon_card', function (Blueprint $table) {
+        Schema::create('saloon_cards', function (Blueprint $table) {
             $table->id();
 
             $table->foreignIdFor(User::class)
@@ -22,8 +22,8 @@ return new class extends Migration
             ->cascadeOnDelete();
 
             $table->string('card-holder-name', 255);
-            $table->bigInteger('card-number');
-            $table->dateTime('card-expiry');
+            $table->longText('card-number');
+            $table->timestamps('card-expiry');
 
             $table->timestamps();
         });

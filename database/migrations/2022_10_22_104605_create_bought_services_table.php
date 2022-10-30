@@ -24,11 +24,7 @@ return new class extends Migration
 
             $table->string('username', 255);
 
-            $table->foreignIdFor(Services::class)
-            ->constrained()
-            ->cascadeOnDelete();
-
-            $table->string('service-name', 255);
+            $table->longText('services');
 
             $table->timestamps();
         });

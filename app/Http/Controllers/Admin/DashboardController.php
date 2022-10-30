@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class DashboardController extends Controller
 {
@@ -41,15 +42,12 @@ class DashboardController extends Controller
             "email" => "required|email",
             "contact-no" => "required|numeric",
             "gender" => "required",
-            "avatar" => "required|string",
             "service" => "required",
             "card-number" => "required",
             "dateTime" => "required",
             "password" => "required|string",
             "location" => "required|string",
         ]);
-
-        // $user = $request->user();
 
         $file = $request->file('avatar');
 
@@ -59,15 +57,30 @@ class DashboardController extends Controller
 
         $user = $request->user()->create([
             "name" => $request['fullName'],
-            "password" => $request['password'],
+            "password" => Hash::make($request['password']),
             "email" => $request['email'],
             "contact-no" => $request['contact-no'],
             "gender" => $request['gender'],
+            "location" => $request['location'],
             "role" => "customer",
             "avatar" => $avatar_name,
         ]);
 
+        $user->bought_services()->create([
+            'user_id' => $user->id,
+            'username' => $user->name,
+            'services' => json_encode($request['service']),
+        ]);
 
+        $user->saloon_card()->create([
+            'user_id' => $user->id,
+            'card-holder-name' => $user->name,
+            'card-number' => json_encode($request['card-number']),
+            'card-expiry' => $request['dateTime'],
+        ]);
+
+        return redirect()->route('admin.dashboard')
+        ->with('created', 'Customer has been created');
     }
 
     /**

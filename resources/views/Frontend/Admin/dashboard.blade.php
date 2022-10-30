@@ -110,6 +110,8 @@
             <!--  BEGIN CONTENT AREA  -->
             <div id="content" class="main-content">
                 <div class="layout-px-spacing">
+                    <x-error/>
+                    <x-alert/>
 
                     <div class="layout-top-spacing">
                         <div class="add-card float-right">
@@ -123,7 +125,7 @@
                     </div>
 
                     <div class="register-customer-form pt-5">
-                        <form id="registration_info_form" action="{{ route('admin.store') }}" method="POST" class="text-uppercase">
+                        <form id="registration_info_form" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data" class="text-uppercase">
                             @csrf
                             <div class="row justify-content-around col-lg-12">
                                 <div class="mb-3 col-lg-4">

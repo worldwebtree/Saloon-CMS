@@ -8,4 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class SaloonCard extends Model
 {
     use HasFactory;
+
+        /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'user_id',
+        'card-holder-name',
+        'card-number',
+        'card-expiry',
+    ];
+
+    /**
+     * The saloon_card belongs to the user
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
