@@ -26,5 +26,14 @@ class DatabaseSeeder extends Seeder
             'role' => 'super-admin',
             'avatar' => 'example-image.png',
         ]);
+
+        User::factory()->create([
+            'name' => 'Customer',
+            'email' => 'Customer@example.com',
+            'contact-no' => '03319218866',
+            'gender' => 'female',
+            'role' => 'customer',
+            'avatar' => 'example-customer-image.png',
+        ]);
     }
 }

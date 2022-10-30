@@ -38,6 +38,9 @@ code { color: #e7515a; }
 .customer-list-table {
     margin-top: 2rem;
 }
+.personal-information-section {
+    margin-top: 2rem;
+}
 
 .customer-list-table > thead > tr > th{
     text-transform: uppercase !important;
@@ -81,10 +84,14 @@ code { color: #e7515a; }
     justify-content: flex-start;
 }
 .add-card > a{
-    background-color: #72bddef1;
+    background-color: #95d0e9f1;
     border-radius: 1rem;
     font-size: 1rem;
     font-weight: bold;
+}
+.header-user-icon:hover {
+    background-color: #b2e1f5;
+    transition: 0.3s ease;
 }
 .add-card > a:hover{
     background-color: #29ABE2;

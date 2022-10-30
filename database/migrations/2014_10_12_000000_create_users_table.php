@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->bigInteger('contact-no');
             $table->enum('gender', ['male', 'female', 'custom']);
-            $table->enum('role', ['super-admin', 'customer']);
+            $table->enum('role', ['super-admin', 'admin', 'customer']);
             $table->string('avatar', 2048);
             $table->rememberToken();
             $table->timestamps();
