@@ -17,7 +17,7 @@
 
                     <li class="nav-item theme-text border rounded ml-5">
                         <strong>
-                            <a href="" class="nav-link">
+                            <a class="nav-link">
                                 <span>
                                     <i class="fas fa-credit-card fa-1x text-info"></i>
                                     <strong>xxxx xxxx xxxx</strong>
@@ -73,14 +73,344 @@
             <div id="content" class="main-content">
                 <div class="layout-px-spacing">
 
-                    <div class="layout-top-spacing">
-                        <div class="add-card float-right">
-                            <a name="" id="" class="btn text-dark rounded-pill" href="#" role="button">
-                                <img src="{{ asset('Frontend/assets/dashboard-icons/1x/1x/1x/Asset 34.png') }}" alt="customer-add">
+                    <div class="layout-top-spacing d-flex justify-content-between">
+                        <div class="add-card">
+                            <div class="location-info d-flex align-items-center mb-3">
+                                <strong class="text-white pr-3">Progress</strong>
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/1x/setting-icon.png') }}" alt="location-icon" srcset="">
+                            </div>
+                            <div class="text-capitalize d-flex">
+                                <h2 class="text-white mr-4">
+                                    17 <br>
+                                    <strong>servies</strong>
+                                </h2>
+                                <h2 class="text-white mr-4">
+                                    04 <br>
+                                    <strong>servies</strong>
+                                </h2>
+                                <h2 class="text-white">
+                                    310 <br>
+                                    <strong>remaining time</strong>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="add-card">
+                            <span class="text-capitalize">
+                                register date <br>
+                                <strong class="text-white">21, Dember 2022</strong>
+                            </span>
+                            <div class="location-info d-flex justify-content-around align-items-center">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/1x/location-icon.png') }}" alt="location-icon" srcset="">
+                                <strong class="text-white">jaipur</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="services-section row col-lg-12">
+                        <div class="service col-lg-2 m-1 unlimited text-center">
+                            <div class="service-title">
                                 <span>
-                                    Add Card
+                                    hair cut
                                 </span>
-                            </a>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 unlimited text-center">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 unlimited text-center">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 unlimited text-center">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="service col-lg-2 m-1 limited">
+                            <div class="service-title">
+                                <span>
+                                    hair cut
+                                </span>
+                            </div>
+
+                            <div class="service-image">
+                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="">
+                            </div>
+
+                            <div class="service-limit">
+                                <span>
+                                    unlimited
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

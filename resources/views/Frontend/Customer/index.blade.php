@@ -30,12 +30,22 @@
         body {
             background-color: #111928;
         }
-        /* .theme-logo > a {
-            color: #29ABE2;
+        .main-content {
+            background-color: #202938;
+            border-top-left-radius: 2rem;
         }
-        .user-profile-dropdown > a {
-            color: #29ABE2;
-        } */
+        .location-info {
+            margin-top: 1rem;
+        }
+        .unlimited {
+            background-color: #FEE4CB;
+        }
+        .limited {
+            background-color: #A7D4DB;
+        }
+        .service {
+            border-radius: 1rem;
+        }
     </style>
     {{-- styles --}}
 
