@@ -40,6 +40,8 @@ Route::prefix('admin')->group(function () {
     Route::controller(DashboardController::class)->group(function () {
 
         Route::get('/dashboard', 'index')->name('admin.dashboard');
+
+        Route::post('/store', 'store')->name('admin.store');
     });
 
     Route::controller(CustomerListController::class)->group(function () {

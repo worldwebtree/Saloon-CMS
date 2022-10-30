@@ -113,7 +113,7 @@
 
                     <div class="layout-top-spacing">
                         <div class="add-card float-right">
-                            <a name="" id="" class="btn text-dark rounded-pill" href="#" role="button">
+                            <a style="cursor: pointer;" id="Add_card_submit_btn" type="submit" class="btn text-dark rounded-pill" role="button">
                                 <img src="{{ asset('Frontend/assets/dashboard-icons/1x/1x/1x/Asset 34.png') }}" alt="customer-add">
                                 <span>
                                     Add Card
@@ -123,21 +123,22 @@
                     </div>
 
                     <div class="register-customer-form pt-5">
-                        <form action="#" method="post" class="text-uppercase">
+                        <form id="registration_info_form" action="{{ route('admin.store') }}" method="POST" class="text-uppercase">
+                            @csrf
                             <div class="row justify-content-around col-lg-12">
                                 <div class="mb-3 col-lg-4">
                                     <label for="fullName" class="form-label pl-3">Full Name</label>
-                                    <input type="text" class="form-control bg-transparent rounded-pill w-100" name="fullName" id="FullName" placeholder="">
+                                    <input type="text" class="form-control bg-transparent rounded-pill w-100" required name="fullName" id="FullName" placeholder="">
                                 </div>
 
                                 <div class="mb-3 col-lg-4">
                                     <label for="email" class="form-label pl-3">Email</label>
-                                    <input type="email" class="form-control bg-transparent rounded-pill w-100" name="email" id="Email" placeholder="">
+                                    <input type="email" class="form-control bg-transparent rounded-pill w-100" required name="email" id="Email" placeholder="">
                                 </div>
 
                                 <div class="mb-3 col-lg-4">
                                     <label for="contact-no" class="form-label pl-3">Contact no</label>
-                                    <input type="number" class="form-control bg-transparent rounded-pill w-100" name="contact-no" id="ContactNo" placeholder="">
+                                    <input type="number" class="form-control bg-transparent rounded-pill w-100" required name="contact-no" id="ContactNo" placeholder="">
                                 </div>
                             </div>
                             <hr class="bg-dark w-100">
@@ -145,7 +146,7 @@
                             <div style="justify-content:space-around;" class="gender-section row align-items-center">
                                 <label for="gender" class="form-label">Gender</label>
                                 <div style="border:2px solid #dfdfdf;" id="set-border-blue-male" class="ml-5 mb-3 rounded pt-3 pb-3 pl-2 pr-2">
-                                    <input type="checkbox" class="form-control d-none" name="gender" id="Gender-male" placeholder="">
+                                    <input type="checkbox" class="form-control d-none" required value="male" name="gender" id="Gender-male" placeholder="">
                                     <label for="Gender-male" id="gender-male-label">
                                         <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="male-icon" srcset="">
                                         male
@@ -153,10 +154,18 @@
                                 </div>
 
                                 <div style="border:2px solid #dfdfdf;" id="set-border-blue-female" class="mb-3 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
-                                    <input type="checkbox" class="form-control d-none" name="gender" id="Gender-female" placeholder="">
+                                    <input type="checkbox" class="form-control d-none" required value="female" name="gender" id="Gender-female" placeholder="">
                                     <label for="Gender-female" id="gender-female-label">
                                     <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="female-icon" srcset="">
                                         female
+                                    </label>
+                                </div>
+
+                                <div style="border:2px solid #dfdfdf;" id="set-border-blue-custom" class="mb-3 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
+                                    <input type="checkbox" class="form-control d-none" required value="custom" name="gender" id="Gender-custom" placeholder="">
+                                    <label for="Gender-custom" class="d-flex align-items-center" id="gender-custom-label">
+                                        <i class="fas fa-user fa-3x text-info pr-2"></i>
+                                        custom
                                     </label>
                                 </div>
 
@@ -165,7 +174,7 @@
                                         Submit Picture
                                     </label>
                                     <div class="ml-5 mb-1">
-                                        <input type="file" class="form-control bg-transparent rounded-pill d-none" name="avatar" id="Avatar" placeholder="">
+                                        <input type="file" class="form-control bg-transparent rounded-pill d-none" required name="avatar" id="Avatar" placeholder="">
 
                                         <label for="Avatar">
                                             <div style="border:2px solid #dfdfdf;" class="avatar-content position-relative rounded pt-4 pb-4 pl-2 pr-2">
@@ -178,7 +187,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        {{-- </form> --}}
                     </div>
                     <hr class="bg-dark w-100">
 
@@ -197,7 +206,7 @@
                                                 hair cut
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="hair cut" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -211,7 +220,7 @@
                                                 shampoo
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="shampoo" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -225,7 +234,7 @@
                                                 blow dryer
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="blow dryer" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -239,7 +248,7 @@
                                                 eye brow
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="eye brow" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -253,7 +262,7 @@
                                                 hair treatement
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="hair treatement" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -267,7 +276,7 @@
                                                 hair spa
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="hair spa" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -281,7 +290,7 @@
                                                 facial
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="facial" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -295,7 +304,7 @@
                                                 menicure pedicure
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="menicure pedicure" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -309,7 +318,7 @@
                                                 hand massage
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="hand massage" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -320,10 +329,10 @@
                                         <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 19.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
-                                                foot massage
+                                                front massage
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="front massage" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -337,7 +346,7 @@
                                                 waxing full body
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="waxing full body" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -348,10 +357,10 @@
                                         <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 21.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
-                                                hand wexing
+                                                hand waxing
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="hand waxing" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -362,10 +371,10 @@
                                         <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 22.png') }}" alt="hair-cut-icon" srcset="">
                                             <label for="" class="pl-3 pr-2">
-                                                leg wexing
+                                                leg waxing
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="leg waxing" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -379,7 +388,7 @@
                                                 under arms
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="under arms" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -393,7 +402,7 @@
                                                 clean up
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="clean up" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -407,7 +416,7 @@
                                                 dtan
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="dtan" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -421,7 +430,7 @@
                                                 face wax brazilian
                                             </label>
                                             <label class="switch">
-                                                <input type="checkbox" checked class="default">
+                                                <input type="checkbox" required name="service[]" value="face wax brazilian" checked class="default">
                                                 <span class="slider round"></span>
                                             </label>
                                         </div>
@@ -442,10 +451,10 @@
                                     <div class="card-image mb-3">
                                         <img src="{{ asset('Frontend/assets/dashboard-icons/1x/Asset 1.png') }}" alt="" srcset="">
                                     </div>
-                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" name="" id="" placeholder="xxxx">
-                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" name="" id="" placeholder="xxxx">
-                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" name="" id="" placeholder="xxxx">
-                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" name="" id="" placeholder="xxxx">
+                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" maxlength="4" pattern="\d{4}" required name="card-number[]" id="" placeholder="xxxx">
+                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" maxlength="4" pattern="\d{4}" required name="card-number[]" id="" placeholder="xxxx">
+                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" maxlength="4" pattern="\d{4}" required name="card-number[]" id="" placeholder="xxxx">
+                                    <input type="text" class="form-control bg-transparent col-lg-2 mb-3" maxlength="4" pattern="\d{4}" required name="card-number[]" id="" placeholder="xxxx">
                                 </div>
                             </div>
                         </div>
@@ -456,18 +465,19 @@
                         <div class="other-credentials-section-content pt-2 pb-2 row justify-content-around">
                             <div class="mb-3">
                                 <label for="DateTime">pick date & time*</label>
-                                <input type="datetime-local" class="form-control bg-transparent" name="" id="DateTime" placeholder="">
+                                <input type="datetime-local" class="form-control bg-transparent" required name="dateTime" id="DateTime" placeholder="">
                             </div>
                             <div class="mb-3">
                                 <label for="Password">password</label>
-                                <input type="password" class="form-control bg-transparent" name="" id="" placeholder="xxxx">
+                                <input type="password" class="form-control bg-transparent" required name="password" id="" placeholder="xxxx">
                             </div>
                             <div class="mb-3">
                                 <label for="Location">location</label>
-                                <input type="text" class="form-control bg-transparent" name="" id="" placeholder="">
+                                <input type="text" class="form-control bg-transparent" required name="location" id="" placeholder="">
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
 
                 <div class="footer-wrapper mt-3">
@@ -499,6 +509,16 @@
                         $("#set-border-blue-female").toggleClass("gender-animate-border");
                     });
 
+                    $("#gender-custom-label").click(function () {
+                        $("#set-border-blue-custom").toggleClass("gender-animate-border");
+                    });
+                });
+
+                // registration form submition
+                $(document).ready(function () {
+                    $("#Add_card_submit_btn").click(function (e) {
+                        $("#registration_info_form").submit();
+                    });
                 });
             </script>
         @endsection
