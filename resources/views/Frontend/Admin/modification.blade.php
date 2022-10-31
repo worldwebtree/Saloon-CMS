@@ -199,17 +199,17 @@
                                                 </label>
                                             </div>
 
-                                        <div style="border-left:2px solid #dfdfdf;" class="avatar-section">
+                                        <div style="border-left:2px solid #dfdfdf;" class="avatar-section mt-3">
                                             <label for="" class="ml-5 pl-3">
                                                 Update Picture
                                             </label>
                                             <div class="ml-5 mb-1">
-                                                <input type="file" class="form-control bg-transparent rounded-pill d-none" name="avatar" id="Avatar" placeholder="">
+                                                <input type="file" class="form-control bg-transparent rounded-pill d-none" value="{{ $customer['avatar'] }}" name="avatar" id="Avatar" placeholder="">
 
                                                 <label for="Avatar">
                                                     <div style="border:2px solid #dfdfdf;" class="avatar-content position-relative rounded pt-4 pb-4 pl-2 pr-2">
                                                         <div style="background-color:#D4FAFF; border:2px solid #dfdfdf; width:15rem; height:50px; border-radius: 2rem;" class="">
-                                                            <span style="top: 2.3rem; left: 1rem; width: 10rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" id="file-empty-field" class="position-absolute"></span>
+                                                            <span style="top: 2.3rem; left: 1rem; width: 10rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" id="file-empty-field" class="position-absolute">{{ $customer['avatar'] ?? " "}}</span>
                                                         </div>
                                                         <img style="top: 1.6rem; left: 12rem;" class="position-absolute" src="{{ asset('Frontend/assets/dashboard-icons/1x/1x/1x/1x/Asset 1.png') }}" alt="camera">
                                                     </div>
@@ -229,249 +229,35 @@
                             </div>
 
                             <div class="services-section mt-5">
-                                <div class="services-content">
-
-                                    <div class="services text-capitalize col-lg-12 row">
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        hair cut
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 11.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        shampoo
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 12.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        blow dryer
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 13.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        eye brow
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 14.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        hair treatement
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 15.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        hair spa
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 16.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        facial
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 17.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        menicure pedicure
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 18.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        hand massage
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 19.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        foot massage
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 20.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        waxing full body
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 21.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        hand wexing
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 22.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        leg wexing
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 23.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        under arms
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 24.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        clean up
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 25.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        dtan
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
-                                        </div>
-                                        <div class="col-lg-3 mb-3">
-                                            <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                                <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 26.png') }}" alt="hair-cut-icon" srcset="">
-                                                    <label for="" class="pl-3 pr-2">
-                                                        face wax brazilian
-                                                    </label>
-                                                    <label class="switch">
-                                                        <input type="checkbox" checked class="default">
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                </div>
-                                            </li>
+                                {{-- @php
+                                    for () {
+                                        echo "$i";
+                                    }
+                                @endphp --}}
+                                @foreach ($customer->bought_services as $services)
+                                    <div class="services-content">
+                                        <div class="services text-capitalize col-lg-12 row">
+                                            @foreach (json_decode($services['services']) as $service)
+                                                @for ($i = 10; $i <= 26; $i++)
+                                                    <div class="col-lg-3 mb-3">
+                                                        <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                                            <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset '.$i.'.png') }}" alt="{{ $service }} icon" srcset="">
+                                                                <label for="" class="pl-3 pr-2">
+                                                                    {{ $service }}
+                                                                </label>
+                                                                <label class="switch">
+                                                                    <input type="checkbox" value="{{ $service }}" checked class="default">
+                                                                    <span class="slider round"></span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </div>
+                                                @endfor
+                                            @endforeach
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -513,11 +299,13 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#Avatar").change(function (e) {
-                    let fileName = e.target.files[0].name;
-                    $("#file-empty-field").text(fileName);
+                        let fileName = e.target.files[0].name;
+
+                        $("#file-empty-field").text(fileName);
                     });
                 });
 
+                // gender input checkbox animation
                 $(document).ready(function () {
                     $("#gender-male-label").click(function () {
                         $("#set-border-blue-male").toggleClass("gender-animate-border");
