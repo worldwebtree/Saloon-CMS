@@ -175,21 +175,24 @@
 
                                     <div style="justify-content:space-around;" class="gender-section row align-items-center">
                                         <label for="gender" class="form-label">Gender</label>
-                                        <div style="border:2px solid #dfdfdf;" id="set-border-blue-male" class="ml-5 mb-3 rounded pt-3 pb-3 pl-2 pr-2">
-                                            <input type="checkbox" class="form-control d-none" name="gender" id="Gender-male" placeholder="">
-                                            <label for="Gender-male" id="gender-male-label">
-                                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="male-icon" srcset="">
-                                                male
-                                            </label>
-                                        </div>
+                                        @if ($customer['gender'] == "male")
+                                            <div style="border:2px solid #dfdfdf;" id="set-border-blue-male" class="ml-5 mb-3 rounded pt-3 pb-3 pl-2 pr-2">
+                                                <input type="checkbox" class="form-control d-none" checked name="gender" value="{{ $customer['gender'] }}" id="Gender-male" placeholder="">
+                                                <label for="Gender-male" id="gender-male-label">
+                                                    <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="male-icon" srcset="">
+                                                    male
+                                                </label>
+                                            </div>
 
-                                        <div style="border:2px solid #dfdfdf;" id="set-border-blue-female" class="mb-3 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
-                                            <input type="checkbox" class="form-control d-none" name="gender" id="Gender-female" placeholder="">
-                                            <label for="Gender-female" id="gender-female-label">
-                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="female-icon" srcset="">
-                                                female
-                                            </label>
-                                        </div>
+                                            @elseif ($customer['gender'] == "female")
+                                            <div style="border:2px solid #dfdfdf;" id="set-border-blue-female" class="mb-3 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
+                                                <input type="checkbox" class="form-control d-none" checked name="gender" value="{{ $customer['gender'] }}" id="Gender-female" placeholder="">
+                                                <label for="Gender-female" id="gender-female-label">
+                                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="female-icon" srcset="">
+                                                    female
+                                                </label>
+                                            </div>
+                                        @endif
 
                                         <div style="border-left:2px solid #dfdfdf;" class="avatar-section">
                                             <label for="" class="ml-5 pl-3">
@@ -491,12 +494,19 @@
 
                 $(document).ready(function () {
                     $("#gender-male-label").click(function () {
-                    $("#set-border-blue-male").toggleClass("gender-animate-border");
+                        $("#set-border-blue-male").toggleClass("gender-animate-border");
                     });
 
+                    if ($("#gender-male").is(": checked")) {
+
+                        $("#set-border-blue-male").addClass("gender-animate-border");
+                    }else {
+                        $("#set-border-blue-male").removeClass("gender-animate-border");
+                    }
+
                     $("#gender-female-label").click(function () {
-                    $("#set-border-blue-female").toggleClass("gender-animate-border");
-                });
+                        $("#set-border-blue-female").toggleClass("gender-animate-border");
+                    });
 
                 });
             </script>
