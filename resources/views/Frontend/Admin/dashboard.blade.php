@@ -198,23 +198,45 @@
                             <h5 class="text-uppercase">
                                 service lists
                             </h5>
-
+                            @php
+                                $services = [
+                                    'hair cut',
+                                    'shampoo',
+                                    'blow dryer',
+                                    'eye brow',
+                                    'hair treatement',
+                                    'hair spa',
+                                    'facial',
+                                    'menicure pedicure',
+                                    'hand massage',
+                                    'front massage',
+                                    'waxing full body',
+                                    'hand waxing',
+                                    'leg waxing',
+                                    'under arms',
+                                    'clean up',
+                                    'dtan',
+                                    'face wax brazilian'
+                                ];
+                            @endphp
                             <div class="services text-capitalize col-lg-12 row">
-                                <div class="col-lg-3 mb-3">
-                                    <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
-                                        <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                            <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" alt="hair-cut-icon" srcset="">
-                                            <label for="" class="pl-3 pr-2">
-                                                hair cut
-                                            </label>
-                                            <label class="switch">
-                                                <input type="checkbox" required name="service[]" value="hair cut" checked class="default">
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </div>
-                                    </li>
-                                </div>
-                                <div class="col-lg-3 mb-3">
+                                @foreach ($services as $service)
+                                    <div class="col-lg-3 mb-3">
+                                        <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
+                                            <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
+                                                <img src="{{ asset('Frontend/assets/dashboard-icons/'.$service.'.png') }}" alt="{{ $service }} icon" srcset="">
+                                                <label for="" class="pl-3 pr-2">
+                                                    {{ $service }}
+                                                </label>
+                                                <label class="switch">
+                                                    <input type="checkbox" required name="service[]" value="hair cut" checked class="default">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </div>
+                                @endforeach
+                                {{-- <div class="col-lg-3 mb-3">
                                     <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
                                         <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
                                             <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 11.png') }}" alt="hair-cut-icon" srcset="">
@@ -437,7 +459,7 @@
                                             </label>
                                         </div>
                                     </li>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
