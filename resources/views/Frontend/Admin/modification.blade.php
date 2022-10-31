@@ -175,24 +175,29 @@
 
                                     <div style="justify-content:space-around;" class="gender-section row align-items-center">
                                         <label for="gender" class="form-label">Gender</label>
-                                        @if ($customer['gender'] == "male")
                                             <div style="border:2px solid #dfdfdf;" id="set-border-blue-male" class="ml-5 mb-3 rounded pt-3 pb-3 pl-2 pr-2">
-                                                <input type="checkbox" class="form-control d-none" checked name="gender" value="{{ $customer['gender'] }}" id="Gender-male" placeholder="">
+                                                <input type="checkbox" class="form-control d-none" name="gender" value="{{ $customer['gender'] }}" id="Gender-male" placeholder="">
                                                 <label for="Gender-male" id="gender-male-label">
                                                     <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="male-icon" srcset="">
                                                     male
                                                 </label>
                                             </div>
 
-                                            @elseif ($customer['gender'] == "female")
                                             <div style="border:2px solid #dfdfdf;" id="set-border-blue-female" class="mb-3 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
-                                                <input type="checkbox" class="form-control d-none" checked name="gender" value="{{ $customer['gender'] }}" id="Gender-female" placeholder="">
+                                                <input type="checkbox" class="form-control d-none" name="gender" value="{{ $customer['gender'] }}" id="Gender-female" placeholder="">
                                                 <label for="Gender-female" id="gender-female-label">
                                                 <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="female-icon" srcset="">
                                                     female
                                                 </label>
                                             </div>
-                                        @endif
+
+                                            <div style="border:2px solid #dfdfdf;" id="set-border-blue-custom" class="mb-3 ml-5 mr-5 rounded pt-3 pb-3 pl-2 pr-2">
+                                                <input type="checkbox" class="form-control d-none" required value="custom" name="gender" id="Gender-custom" placeholder="">
+                                                <label for="Gender-custom" class="d-flex align-items-center" id="gender-custom-label">
+                                                    <i class="fas fa-user fa-3x text-info pr-2"></i>
+                                                    custom
+                                                </label>
+                                            </div>
 
                                         <div style="border-left:2px solid #dfdfdf;" class="avatar-section">
                                             <label for="" class="ml-5 pl-3">
@@ -484,6 +489,27 @@
         <!-- END MAIN CONTAINER -->
 
         @section('scripts')
+            @if ($customer['gender'] == "male")
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#Gender-male").attr("checked", "checked");
+                    });
+                </script>
+
+                @elseif ($customer['gender'] == "female")
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#Gender-female").attr("checked", "checked");
+                    });
+                </script>
+
+                @elseif ($customer['gender'] == "custom")
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#Gender-custom").attr("checked", "checked");
+                    });
+                </script>
+            @endif
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#Avatar").change(function (e) {
@@ -497,16 +523,34 @@
                         $("#set-border-blue-male").toggleClass("gender-animate-border");
                     });
 
-                    if ($("#gender-male").is(": checked")) {
+                    $("#gender-female-label").click(function () {
+                        $("#set-border-blue-female").toggleClass("gender-animate-border");
+                    });
+
+                    $("#gender-custom-label").click(function () {
+                        $("#set-border-blue-custom").toggleClass("gender-animate-border");
+                    });
+
+                    if ( $("#Gender-male").is(":checked") ) {
 
                         $("#set-border-blue-male").addClass("gender-animate-border");
                     }else {
                         $("#set-border-blue-male").removeClass("gender-animate-border");
                     }
 
-                    $("#gender-female-label").click(function () {
-                        $("#set-border-blue-female").toggleClass("gender-animate-border");
-                    });
+                    if ( $("#Gender-female").is(":checked") ) {
+
+                        $("#set-border-blue-female").addClass("gender-animate-border");
+                    }else {
+                        $("#set-border-blue-female").removeClass("gender-animate-border");
+                    }
+
+                    if ( $("#Gender-custom").is(":checked") ) {
+
+                        $("#set-border-blue-custom").addClass("gender-animate-border");
+                    }else {
+                        $("#set-border-blue-custom").removeClass("gender-animate-border");
+                    }
 
                 });
             </script>
