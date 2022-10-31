@@ -229,11 +229,6 @@
                             </div>
 
                             <div class="services-section mt-5">
-                                {{-- @php
-                                    for () {
-                                        echo "$i";
-                                    }
-                                @endphp --}}
                                 @foreach ($customer->bought_services as $services)
                                     <div class="services-content">
                                         <div class="services text-capitalize col-lg-12 row">
@@ -241,7 +236,7 @@
                                                     <div class="col-lg-3 mb-3">
                                                         <li style="display: inline-block;" class="bg-transparent border-0 service-list-item">
                                                             <div class="setBorder d-flex align-items-center pl-1 pr-1 pt-1 pb-1">
-                                                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}" class="service_img" alt="{{ $service }} icon" srcset="">
+                                                                <img src="{{ asset('Frontend/assets/dashboard-icons/'.$service.'.png') }}" class="service_img" alt="{{ $service }} icon" srcset="">
                                                                 <label for="" class="pl-3 pr-2">
                                                                     {{ $service }}
                                                                 </label>
@@ -339,22 +334,6 @@
                         $("#set-border-blue-custom").removeClass("gender-animate-border");
                     }
 
-                });
-
-                $(document).ready(function () {
-                    let url = $('.service_img').attr('src');
-
-                    for (let index = 10; index <= 26; index++) {
-                        // var check = $(".service_img").attr('src', 'http://127.0.0.1:8000/Frontend/assets/dashboard-icons/Asset '+ index +'.png');
-                        // console.log(index);
-                        // var url = '{{ asset('Frontend/assets/dashboard-icons/Asset 10.png') }}';
-                        let check = url.replace('10', index);
-                        console.log(check);
-                        // // alert(check);
-                        $('.service_img').attr('src', check);
-
-                    }
-                    // console.log(check);
                 });
             </script>
         @endsection
