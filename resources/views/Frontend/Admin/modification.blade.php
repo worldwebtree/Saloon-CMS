@@ -131,42 +131,48 @@
 
                     <div class="personal-information-section">
                         <div class="personal-info-content">
-                            <form action="#" method="POST" class="customer-modification-form border rounded mb-4 pt-3 pb-3 pl-4 pr-4">
+                            <form action="#" method="POST" class="customer-modification-form text-capitalize border rounded mb-4 pt-3 pb-3 pl-4 pr-4">
                                 <div class="row justify-content-around col-lg-12">
-                                    <div class="mb-3 col-lg-3">
+                                    <div class="mb-3 col-lg-4">
                                         <label for="fullName" class="form-label pl-3">Full Name</label>
-                                        <input type="text" class="form-control bg-transparent rounded-pill w-100" name="fullName" id="FullName" placeholder="">
+                                        <input type="text" class="form-control bg-transparent rounded-pill w-100" name="fullName" value="{{ $customer['name'] }}" id="FullName" placeholder="">
                                     </div>
 
-                                    <div class="mb-3 col-lg-3">
+                                    <div class="mb-3 col-lg-4">
                                         <label for="email" class="form-label pl-3">Email</label>
-                                        <input type="email" class="form-control bg-transparent rounded-pill w-100" name="email" id="Email" placeholder="">
+                                        <input type="email" class="form-control bg-transparent rounded-pill w-100" name="email" value="{{ $customer['email'] }}" id="Email" placeholder="">
                                     </div>
 
-                                    <div class="mb-3 col-lg-3">
-                                        <label for="contact-no" class="form-label pl-3">Contact no</label>
-                                        <input type="number" class="form-control bg-transparent rounded-pill w-100" name="contact-no" id="ContactNo" placeholder="">
+                                    <div class="mb-3 col-lg-4">
+                                        <label for="ContactNo" class="form-label pl-3">Contact no</label>
+                                        <input type="number" class="form-control bg-transparent rounded-pill w-100" name="contact-no" value="{{ $customer['contact-no'] }}" id="ContactNo" placeholder="">
                                     </div>
 
-                                    <div class="mb-3 col-lg-3">
-                                        <label for="contact-no" class="form-label pl-3">Card no</label>
-                                        <input type="number" class="form-control bg-transparent rounded-pill w-100" name="contact-no" id="ContactNo" placeholder="">
-                                    </div>
+                                    @foreach ($customer->saloon_card as $card)
+                                        <div class="row justify-content-around align-items-center mt-3 mb-3">
+                                            <label for="CardNumber" class="form-label pl-3">Card no</label>
 
-                                    {{-- <div class="other-credentials-section-content pt-2 pb-2 row justify-content-around"> --}}
+                                            @foreach (json_decode($card['card-number']) as $card_number)
+                                                <div class="mb-3 col-lg-2">
+                                                    <input type="text" class="form-control bg-transparent rounded-pill w-100" value="{{ $card_number }}" maxlength="4" pattern="\d{4}" required name="card-number[]" id="" placeholder="xxxx">
+                                                </div>
+                                            @endforeach
+                                        </div>
                                         <div class="mb-3 col-lg-4">
                                             <label for="DateTime">pick date & time*</label>
-                                            <input type="datetime-local" class="form-control bg-transparent" name="" id="DateTime" placeholder="">
+                                            <input type="datetime-local" class="form-control bg-transparent" name="dateTime" value="{{ $card['card-expiry'] }}" id="DateTime" placeholder="">
                                         </div>
-                                        <div class="mb-3 col-lg-4">
-                                            <label for="Password">password</label>
-                                            <input type="password" class="form-control bg-transparent" name="" id="" placeholder="xxxx">
-                                        </div>
-                                        <div class="mb-3 col-lg-4">
-                                            <label for="Location">location</label>
-                                            <input type="text" class="form-control bg-transparent" name="" id="" placeholder="">
-                                        </div>
-                                    {{-- </div> --}}
+                                    @endforeach
+
+                                    <div class="mb-3 col-lg-4">
+                                        <label for="Password">password</label>
+                                        <input type="password" class="form-control bg-transparent" name="password" value="{{ $customer['password'] }}" id="Password" placeholder="xxxx">
+                                    </div>
+                                    <div class="mb-3 col-lg-4">
+                                        <label for="Location">location</label>
+                                        <input type="text" class="form-control bg-transparent" name="location" value="{{ $customer['location'] }}" id="Location" placeholder="">
+                                    </div>
+
                                     <div style="justify-content:space-around;" class="gender-section row align-items-center">
                                         <label for="gender" class="form-label">Gender</label>
                                         <div style="border:2px solid #dfdfdf;" id="set-border-blue-male" class="ml-5 mb-3 rounded pt-3 pb-3 pl-2 pr-2">

@@ -126,9 +126,9 @@ code { color: #e7515a; }
     border: 1px solid #e0e6ed;
     box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
 }
-.layout-top-spacing { margin-top: 20px; }
+.layout-top-spacing { margin-top: 30px; }
 .layout-spacing { padding-bottom: 40px; }
-.layout-px-spacing { padding: 0 40px 0 40px!important; min-height: calc(100vh - 170px)!important; }
+.layout-px-spacing { padding: 30px 40px 0 40px!important; min-height: calc(100vh - 170px)!important; }
 .sidebar-closed .layout-px-spacing { padding: 0 16px!important;}
 .widget.box .widget-header {
     background: #fff;

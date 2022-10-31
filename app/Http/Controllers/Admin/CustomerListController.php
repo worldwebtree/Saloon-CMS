@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CustomerListController extends Controller
@@ -12,9 +13,12 @@ class CustomerListController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $users)
     {
-        return view('Frontend.Admin.customer-list');
+        $customers = $users->with('saloon_card')
+        ->where('role', 'customer')->paginate(10);
+
+        return view('Frontend.Admin.customer-list', compact('customers'));
     }
 
     /**

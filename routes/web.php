@@ -51,7 +51,7 @@ Route::prefix('admin')->group(function () {
 
     Route::controller(ModificationController::class)->group(function () {
 
-        Route::get('/modification', 'index')->name('admin.modification');
+        Route::get('/modification/{id}', 'index')->name('admin.modification');
     });
 });
 require __DIR__.'/auth.php';

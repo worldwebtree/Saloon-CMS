@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ModificationController extends Controller
@@ -12,9 +13,12 @@ class ModificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user, $id)
     {
-        return view('Frontend.Admin.modification');
+        $customer = $user->with(['bought_services', 'saloon_card'])
+        ->findOrFail($id);
+
+        return view('Frontend.Admin.modification', compact('customer'));
     }
 
     /**

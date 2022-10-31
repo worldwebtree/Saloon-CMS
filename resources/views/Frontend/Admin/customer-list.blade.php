@@ -46,24 +46,32 @@
                         </div>
                         <!--end of col-->
                         <div class="col pl-0">
-                            <input class="form-control form-control-lg p-0 form-control-borderless" type="search" placeholder="Search">
+                            <input class="form-control form-control-lg p-0 form-control-borderless" id="mySearchInput" type="search" placeholder="Search">
                         </div>
                     </div>
                 </form>
 
 
                 <ul class="navbar-item ml-md-auto">
-
-                    <li class="nav-item user-profile-dropdown">
-                        <a class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <li class="nav-item dropdown border header-user-icon border-info rounded-circle mr-1">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             @if (auth()->user()->gender == "male")
-                                <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="user-male">
+                                <img width="50" src="{{ asset('Frontend/assets/dashboard-icons/Asset 27.png') }}" alt="user-male">
                                 @elseif (auth()->user()->gender == "female")
                                 <img src="{{ asset('Frontend/assets/dashboard-icons/Asset 28.png') }}" alt="user-female">
                             @endif
                         </a>
-                    </li>
+                        <div class="dropdown-menu">
+                            <form method="POST" action="{{ route('logout') }}" class="m-0">
+                                @csrf
 
+                                <a class="dropdown-item"
+                                onclick="event.preventDefault();
+                                this.closest('form').submit();"
+                                href="{{ route('logout') }}">Logout</a>
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </header>
         </div>
@@ -103,7 +111,7 @@
                     <div class="customer-list-section">
                         <div class="customer-list-content">
                             <div class="table-responsive">
-                                <table class="table table-primary border-0 rounded customer-list-table">
+                                <table class="table table-primary border-0 rounded customer-list-table" id="myCustomerTable">
                                     <thead class="">
                                         <tr class="">
                                             <th scope="col">full name</th>
@@ -113,22 +121,35 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="">
-                                            <td scope="row">lorem</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td>
-                                                <a href="{{ route('admin.modification') }}">
-                                                    <i class="fas fa-edit"></i>
-                                                </a> |
-                                                <a href="#">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @foreach ($customers as $customer)
+                                            <tr class="">
+                                                <td scope="row">{{ $customer['name'] }}</td>
+
+                                                    @foreach ($customer->saloon_card as $card)
+
+                                                        <td>
+                                                            @foreach (json_decode($card['card-number']) as $card_number)
+                                                                {{ $card_number ?? 'Not added Yet!' }}
+                                                            @endforeach
+                                                        </td>
+
+                                                    @endforeach
+
+                                                    <td>{{ $customer['contact-no'] }}</td>
+                                                <td>
+                                                    <a href="{{ route('admin.modification', $customer->id) }}">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a> |
+                                                    <a href="{{ $customer->id }}">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
+                            {{ $customers->links() }}
                         </div>
                     </div>
                 </div>
@@ -146,7 +167,19 @@
 
         @section('scripts')
             <script type="text/javascript">
-            //
+                $(document).ready(function(){
+
+                    $("#mySearchInput").on("keyup", function() {
+
+                        var value = $(this).val().toLowerCase();
+
+                        $("#myCustomerTable tr").filter(function() {
+
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                            });
+                        });
+
+                    });
             </script>
         @endsection
     @endsection
