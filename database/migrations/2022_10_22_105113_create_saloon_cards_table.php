@@ -22,8 +22,8 @@ return new class extends Migration
             ->cascadeOnDelete();
 
             $table->string('card-holder-name', 255);
-            $table->longText('card-number');
-            $table->timestamps('card-expiry');
+            $table->string('card-number');
+            $table->dateTimeTz('card-expiry');
 
             $table->timestamps();
         });

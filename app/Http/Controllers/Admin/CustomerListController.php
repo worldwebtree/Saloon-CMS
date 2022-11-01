@@ -82,8 +82,13 @@ class CustomerListController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user, $id)
     {
-        //
+        $delete = $user->findOrFail($id);
+
+        $delete->delete();
+
+        return redirect()->route('admin.customers')
+        ->with('deleted', 'Customer has been deleted !');
     }
 }

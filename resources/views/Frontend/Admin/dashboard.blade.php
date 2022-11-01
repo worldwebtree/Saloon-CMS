@@ -229,7 +229,7 @@
                                                     {{ $service }}
                                                 </label>
                                                 <label class="switch">
-                                                    <input type="checkbox" required name="service[]" value="hair cut" checked class="default">
+                                                    <input type="checkbox" required name="service[]" value="{{ $service }}" checked class="default">
                                                     <span class="slider round"></span>
                                                 </label>
                                             </div>

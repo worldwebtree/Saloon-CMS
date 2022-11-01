@@ -96,6 +96,8 @@
             <!--  BEGIN CONTENT AREA  -->
             <div id="content" class="main-content">
                 <div class="layout-px-spacing">
+                    <x-error/>
+                    <x-alert/>
 
                     <div class="layout-top-spacing">
                         <div class="add-card float-right">
@@ -140,7 +142,7 @@
                                                     <a href="{{ route('admin.modification', $customer->id) }}">
                                                         <i class="fas fa-edit"></i>
                                                     </a> |
-                                                    <a href="{{ $customer->id }}">
+                                                    <a href="{{ route('admin.customers.delete', $customer->id) }}">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>

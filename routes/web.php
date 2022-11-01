@@ -47,6 +47,7 @@ Route::prefix('admin')->group(function () {
     Route::controller(CustomerListController::class)->group(function () {
 
         Route::get('/customers', 'index')->name('admin.customers');
+        Route::get('/customers/{id}', 'destroy')->name('admin.customers.delete');
     });
 
     Route::controller(ModificationController::class)->group(function () {
