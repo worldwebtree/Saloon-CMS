@@ -25,6 +25,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('Frontend/assets/plugins/table/datatable/dt-global_style.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <!-- END PAGE LEVEL STYLES -->
+
+    <!-- SWEET ALERT 2 -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
     {{-- styles --}}
     <style>
         /* .theme-logo > a {
@@ -79,6 +82,7 @@
             "pageLength": 7
         });
     </script>
+    <script src="sweetalert2.all.min.js"></script>
 
     @yield('scripts')
 </body>
